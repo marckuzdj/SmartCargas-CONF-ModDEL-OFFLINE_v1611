@@ -947,7 +947,7 @@
 
 <script>
 
- window.console.log = function() {};
+// window.console.log = function() {};
   
 // --- LÓGICA DE NAVEGAÇÃO E CADASTRO ---
 
@@ -957,36 +957,34 @@
 // NOVO: DICIONÁRIO MESTRE DE REDE (Ajuste os links de deploy de cada UF)
 // =========================================================================
 const SCRIPTS_POR_UF = {
-   "AL": "https://script.google.com/macros/s/AKfycbwm8L_GSbZFY6xU4ULUff6rjoxor6A2FbeYOepkfcOZkoXnaKsUXKHoDHc9yvXnYxBt/exec",
-   "AM": "https://script.google.com/macros/s/AKfycbzML6V5L5EheoY116lHau70HTd-uXNa_SjQiLIAkjKV5gqY_FwzQUEItMxDHV7-fo2D/exec",
-   "BA": "https://script.google.com/macros/s/AKfycbzgZNnUpmzceHLjl0A0KexRPEbRwTs_osMiKOzZxNjQNgM_jc94F3ny95uccH3w9kRr-g/exec",
-   "CE": "https://script.google.com/macros/s/AKfycby84jZNvN4IrJ07p8wAbAtmLkMKK1Fu5cYdh-iTk3rzr6T5vCXPthUitXrXpc-7Y1-3/exec",
-   "DF": "https://script.google.com/macros/s/AKfycbwtrn7Rqfz6vaYSTghxq78qSLlpkrcQpmKmSH7kQzpLZlts4PsNTk1JTsICzUCCJsbq/exec",
-   "ES": "https://script.google.com/macros/s/AKfycbyW-EFP7kvSiS9DOrS0TgHvKVvSlffr3ek11_RIoQLl9xiSySt7c8tSyM-iMPL_xGrJJg/exec",
-   "GO": "https://script.google.com/macros/s/AKfycbwM6QG22bxIWJTXjvKH1ooWUolECD0z96Db6AE42q_Zko8uAqiMKC5eUHfyeWjB_qKH/exec",
-   "MA": "https://script.google.com/macros/s/AKfycbxL5tFt5xXF8J1Pk76nI3dHYbJCozVVMeqA1UBIZvjQHQ27_rAuWrbri4mPHxsYKVlK/exec",
-   "MT": "https://script.google.com/macros/s/AKfycbyO9VphBQvnRdNHTi3ArvAvtfL9ckvVGH5e5GsnsP2k6ZhgcKmchADcOyA3hH0MzF9Z/exec",
-   "MS": "https://script.google.com/macros/s/AKfycbxQ4UFCziy_i-xoNBXjdGdlNEnQkXtRY6GwrtJxqj8FGEdXS83Hfg-TB_md7ao4py8a/exec",
-   "MG": "https://script.google.com/macros/s/AKfycbzbiEgg026B-Rj8d0njsgI-n9Lg3x0drezWzayRv6MMUT3aowlo2yQ4A7DBulnx9WcoXQ/exec",
-   "PA": "https://script.google.com/macros/s/AKfycbzHmDMWtNPJxwvHzQCCbKvRLkDSWPngGPZPwlqu-uy1w-c-8UUFInF6d2OTk1t5R1Qcwg/exec",
-   "PB": "https://script.google.com/macros/s/AKfycbyZFYNgerl2Sxv9wPdfjdk4rS11zppSpJL9a6f5nMLaBFl0m0kol9BxF4qk2dqms2M/exec",
-   "PR": "https://script.google.com/macros/s/AKfycbz_VNwjmQ9hv3LkL5WHl2luVWZkrquNKPnPCXCyTXo4bYG8oSCTIqEtnCIIKt9fQtovrA/exec",
-   "PE": "https://script.google.com/macros/s/AKfycbyTKX7dTx8MvU4Qh6javYDxUfipriEBM-qThacTQDNV7QL-6CsIC2FOaqHA80KOcYg/exec",
-   "PI": "https://script.google.com/macros/s/AKfycbzMaVKObwQad8-nDvOwMk-Loas9cnhG_hCilGc2i-l_EAG3NurAzIxAaNkInA7ZmIoh4A/exec",
-   "RJ": "https://script.google.com/macros/s/AKfycbwEvZj_QZdiFcoUJmd-1CNLTOJXe8vQ2eOmu85OhgXN_dES_s54sKHIPUFTtbvzVNclwg/exec",
-   "RN": "https://script.google.com/macros/s/AKfycbyMfrNqFfeq-Ys1HS8SLCSk-upQO4Qxkj5c0bkLG5twLyGeBOiZUOKkpa4eZZ3l0euq/exec",
- //1
-   "RS": "https://script.google.com/macros/s/AKfycbxHxI111jtkAxYeriRCmqfyoChC_D5nB68K9kbrKonv5FzIz5-0HZ3F85lkZhc7XFF0_Q/exec",
- //2 
-  // "RS": "https://script.google.com/macros/s/AKfycbyCe3Z1lYMPn8f0DsSXA4p8O5F_Z-rW8Wv2r7c-akCn35cbf2mkPke8-v4n7hweYRrO7g/exec",
-   "RO": "https://script.google.com/macros/s/AKfycbx5x0xJMqKNqEiekMAQzl7E3kFPEOhDzsjmQPJIzJ8u2C95-wphzx2eDj6SjlzOAhZMZw/exec",
-   "SC": "https://script.google.com/macros/s/AKfycbyImZzz4VRzXF-UT_LLf4c93CYoqs3ojNycYCXk4ORM0Dz3nDIVDASGZIfA4ni3dC8H/exec",
-   "SE": "https://script.google.com/macros/s/AKfycbyaouZVAInvc7lRFyw-CJXmQQC0-3G8TrQ83lcm-VxhKSjPwiuJZRWU0QEMzLVuWgO1/exec",
-  // 1 
-   "SP": "https://script.google.com/macros/s/AKfycbycGHAZN01Fb2i9KHs3s0YXo7qdB2FPqoBFWasWyzV9DKbhCWIOprsjTseRJ-4GkfZpOg/exec"
-  // 2
-  // "SP": "https://script.google.com/macros/s/AKfycbwXF4h6lnxsGRtMHiExWYoLK6Mh4iASrcxDRKfy_lMADaquXARtczKD-EwqA0R0UzY/exec"
-  // Adicione as demais UFs conforme criar as planilhas/scripts clonados...
+		 // "AL": "https://script.google.com/macros/s/AKfycbwm8L_GSbZFY6xU4ULUff6rjoxor6A2FbeYOepkfcOZkoXnaKsUXKHoDHc9yvXnYxBt/exec",
+		    // "AM": "https://script.google.com/macros/s/AKfycbzML6V5L5EheoY116lHau70HTd-uXNa_SjQiLIAkjKV5gqY_FwzQUEItMxDHV7-fo2D/exec",
+		    // "BA": "https://script.google.com/macros/s/AKfycbzgZNnUpmzceHLjl0A0KexRPEbRwTs_osMiKOzZxNjQNgM_jc94F3ny95uccH3w9kRr-g/exec", // Perfil 1
+		   "BA": "https://script.google.com/macros/s/AKfycbxoXlBd0a0q3supN-gyiLboOP4vtBRVQvCzhAtkVGRb5rJD1somFjaRqI7kEzCK2HYq/exec", // Perfil 2
+		    // "CE": "https://script.google.com/macros/s/AKfycby84jZNvN4IrJ07p8wAbAtmLkMKK1Fu5cYdh-iTk3rzr6T5vCXPthUitXrXpc-7Y1-3/exec",
+		    // "DF": "https://script.google.com/macros/s/AKfycbwtrn7Rqfz6vaYSTghxq78qSLlpkrcQpmKmSH7kQzpLZlts4PsNTk1JTsICzUCCJsbq/exec", // Perfil 1
+		   "DF": "https://script.google.com/macros/s/AKfycbxZtHjD2piOKg2OqfV7J6UToHYHUnSyl6Lza98WtiMrgb99ZWyYMUfGz3edsNQOvvXn/exec", // Perfil 2
+		   // "ES": "https://script.google.com/macros/s/AKfycbyW-EFP7kvSiS9DOrS0TgHvKVvSlffr3ek11_RIoQLl9xiSySt7c8tSyM-iMPL_xGrJJg/exec",
+		   // "GO": "https://script.google.com/macros/s/AKfycbwM6QG22bxIWJTXjvKH1ooWUolECD0z96Db6AE42q_Zko8uAqiMKC5eUHfyeWjB_qKH/exec",
+		   // "MA": "https://script.google.com/macros/s/AKfycbxL5tFt5xXF8J1Pk76nI3dHYbJCozVVMeqA1UBIZvjQHQ27_rAuWrbri4mPHxsYKVlK/exec",
+		   // "MT": "https://script.google.com/macros/s/AKfycbyO9VphBQvnRdNHTi3ArvAvtfL9ckvVGH5e5GsnsP2k6ZhgcKmchADcOyA3hH0MzF9Z/exec",
+		   // "MS": "https://script.google.com/macros/s/AKfycbxQ4UFCziy_i-xoNBXjdGdlNEnQkXtRY6GwrtJxqj8FGEdXS83Hfg-TB_md7ao4py8a/exec",
+		   // "MG": "https://script.google.com/macros/s/AKfycbzbiEgg026B-Rj8d0njsgI-n9Lg3x0drezWzayRv6MMUT3aowlo2yQ4A7DBulnx9WcoXQ/exec",
+		   // "PA": "https://script.google.com/macros/s/AKfycbzHmDMWtNPJxwvHzQCCbKvRLkDSWPngGPZPwlqu-uy1w-c-8UUFInF6d2OTk1t5R1Qcwg/exec",
+		   // "PB": "https://script.google.com/macros/s/AKfycbyZFYNgerl2Sxv9wPdfjdk4rS11zppSpJL9a6f5nMLaBFl0m0kol9BxF4qk2dqms2M/exec",
+		   // "PE": "https://script.google.com/macros/s/AKfycbyTKX7dTx8MvU4Qh6javYDxUfipriEBM-qThacTQDNV7QL-6CsIC2FOaqHA80KOcYg/exec",
+	  	   // "PR": "https://script.google.com/macros/s/AKfycbz_VNwjmQ9hv3LkL5WHl2luVWZkrquNKPnPCXCyTXo4bYG8oSCTIqEtnCIIKt9fQtovrA/exec",
+      	   // "PI": "https://script.google.com/macros/s/AKfycbzMaVKObwQad8-nDvOwMk-Loas9cnhG_hCilGc2i-l_EAG3NurAzIxAaNkInA7ZmIoh4A/exec",
+		   // "RJ": "https://script.google.com/macros/s/AKfycbwEvZj_QZdiFcoUJmd-1CNLTOJXe8vQ2eOmu85OhgXN_dES_s54sKHIPUFTtbvzVNclwg/exec",
+		   // "RN": "https://script.google.com/macros/s/AKfycbyMfrNqFfeq-Ys1HS8SLCSk-upQO4Qxkj5c0bkLG5twLyGeBOiZUOKkpa4eZZ3l0euq/exec",
+		   // "RS": "https://script.google.com/macros/s/AKfycbxHxI111jtkAxYeriRCmqfyoChC_D5nB68K9kbrKonv5FzIz5-0HZ3F85lkZhc7XFF0_Q/exec", // Perfil 1
+		   "RS": "https://script.google.com/macros/s/AKfycbyCe3Z1lYMPn8f0DsSXA4p8O5F_Z-rW8Wv2r7c-akCn35cbf2mkPke8-v4n7hweYRrO7g/exec", // Perfil 2
+		   // "RO": "https://script.google.com/macros/s/AKfycbx5x0xJMqKNqEiekMAQzl7E3kFPEOhDzsjmQPJIzJ8u2C95-wphzx2eDj6SjlzOAhZMZw/exec",
+		   // "SC": "https://script.google.com/macros/s/AKfycbyImZzz4VRzXF-UT_LLf4c93CYoqs3ojNycYCXk4ORM0Dz3nDIVDASGZIfA4ni3dC8H/exec", 
+		   // "SE": "https://script.google.com/macros/s/AKfycbyaouZVAInvc7lRFyw-CJXmQQC0-3G8TrQ83lcm-VxhKSjPwiuJZRWU0QEMzLVuWgO1/exec", 
+       	   // "SP": "https://script.google.com/macros/s/AKfycbycGHAZN01Fb2i9KHs3s0YXo7qdB2FPqoBFWasWyzV9DKbhCWIOprsjTseRJ-4GkfZpOg/exec" // Perfil1
+		   "SP": "https://script.google.com/macros/s/AKfycbwXF4h6lnxsGRtMHiExWYoLK6Mh4iASrcxDRKfy_lMADaquXARtczKD-EwqA0R0UzY/exec" // Perfil 2
+	  // Adicione as demais UFs conforme criar as planilhas/scripts clonados...
 };
 
 // Variável de controle mestre (Substitui a constante urlSheets fixa antiga)
