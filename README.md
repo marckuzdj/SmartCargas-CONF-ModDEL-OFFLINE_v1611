@@ -1,0 +1,1 @@
+# SmartCargas-CONF-ModDEL-OFFLINE_v1611
